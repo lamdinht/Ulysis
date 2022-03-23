@@ -1,0 +1,26 @@
+Sau khi fix file trong yolov4, máy em thu được những kết quả như thế này:
+
+video: 	10s, 1080p
+CUDA: 	10.1
+Tensorflow: 2.8.0
+Numpy: 	1.23
+
+Avg_fps: 	7.38
+Max_fps: 	8.56		
+Min_fps:	5.32
+
+GPU:			RTX3060
+VRAM:			6GB
+GPU utilization:	40%
+VRAM utilization:	5.3GB/6GB
+CUDA capability:	8.6
+
+- Debug AI code như thế nào cho hiệu quả?
+So far em mới chỉ fix compability issues bằng cách sửa những module bằng pip, nhưng em chưa động sâu vào code vì sợ không biết debug. Anh có biết nền tảng nào để debug python, cuda hiệu quả không ạ?
+
+- Khi triển khai 1 CNN, do computing requirements lớn, có nên compute ở server thay vì ở máy tính cá nhân không?
+Hiện tại bọn em định triển khai cái baseline lên máy tính cá nhân, nhưng trong trường hợp muốn cài lên máy mac, linux hoặc máy không có GPU khỏe thì nó lại là vấn đề.
+Khi chạy trên CPU, thì cũng có thể chạy được tuy nhiên nó chỉ có tầm 0.8 fps thôi.
+
+- Những yếu tố nào có thể hamper CNN's computing power?
+Em nghĩ khả năng calculate của RTX 3060 không phải là vấn đề cho đến khi em nhìn fps đạt được khi áp dụng cnn vào gpu của em. Em expect là sẽ tầm 20fps vì RTX 3060 có tầm 3800 pipelines, so với Tesla P100 có 3584 pipelines cũng tương đương nhưng chỉ nhận được tầm 7fps. Có thể là VRAM vì VRAM của em có 6GB so với 12GB của P100?
